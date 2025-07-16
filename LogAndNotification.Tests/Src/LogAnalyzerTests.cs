@@ -1,18 +1,22 @@
+using LogAndNotification;
 using NUnit.Framework;
 
-[TestFixture]
-public class LogAnalyzerTests
+namespace LogAndNotification.Tests
 {
-    [Test]
-    public void IsValidFileName_BadExtension_ReturnsFalse()
+    [TestFixture]
+    public class LogAnalyzerTests
     {
-        // Arrange
-        LogAnalyzer analyzer = new LogAnalyzer();
+        [Test]
+        public void IsValidFileName_BadExtension_ReturnsFalse()
+        {
+            // Arrange
+            LogAnalyzer analyzer = new LogAnalyzer();
 
-        // Act
-        bool result = analyzer.IsValidLogFileName("filewithbadextension.foo");
+            // Act
+            bool result = analyzer.IsValidLogFileName("filewithbadextension.foo");
 
-        // Assert
-        Assert.False(result);
+            // Assert
+            Assert.That(result, Is.False);
+        }
     }
 }

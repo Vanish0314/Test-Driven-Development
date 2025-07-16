@@ -1,11 +1,14 @@
-public class LogAnalyzer
+namespace LogAndNotification
 {
-    public bool IsValidLogFileName(string fileName)
+    public class LogAnalyzer
     {
-        if (fileName.EndsWith(".SLF"))
+        public bool IsValidLogFileName(string fileName)
         {
-            return false;
+            if (fileName.EndsWith(".SLF"))
+            {
+                return false;
+            }
+            return true;
         }
-        return true;
     }
 }
