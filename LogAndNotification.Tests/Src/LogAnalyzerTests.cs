@@ -6,6 +6,13 @@ public class LogAnalyzerTests
     [Test]
     public void IsValidFileName_BadExtension_ReturnsFalse()
     {
-        // 测试代码写在这里
+        // Arrange
+        LogAnalyzer analyzer = new LogAnalyzer();
+
+        // Act
+        bool result = analyzer.IsValidLogFileName("filewithbadextension.foo");
+
+        // Assert
+        Assert.False(result);
     }
 }
